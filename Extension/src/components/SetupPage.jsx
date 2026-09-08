@@ -79,30 +79,30 @@ const SetupPage = ({ onSetup, onBack }) => {
   }
 
   const inputClass = (field) =>
-    `w-full pl-9 pr-3 py-2.5 min-h-[38px] bg-white/10 border ${
+    `w-full pl-9 pr-3 py-2 min-h-[34px] bg-white/10 border ${
       errors[field] ? 'border-red-500' : 'border-white/20'
     } rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-xs leading-normal`
 
   return (
     <div className="popup-page">
-      {/* Header */}
-      <div className="text-center shrink-0 mb-3">
-        <h1 className="text-xl font-bold text-white leading-tight">Setup Your Profile</h1>
-        <p className="text-gray-300 text-xs mt-1">Connect your GitHub repository to get started</p>
-      </div>
+      <div className="flex flex-col gap-3">
+        {/* Header group */}
+        <div className="text-center">
+          <h1 className="text-lg font-bold text-white leading-tight">Setup Your Profile</h1>
+          <p className="text-gray-300 text-xs mt-1">Connect your GitHub repository to get started</p>
+        </div>
 
-      {/* Form fills remaining space */}
-      <div className="flex-1 min-h-0 flex flex-col gap-3">
-        <div className="flex-1 min-h-0 bg-white/10 backdrop-blur-lg rounded-xl p-4 shadow-2xl border border-white/20 flex flex-col">
-          <form onSubmit={handleSubmit} className="flex flex-col gap-3 flex-1">
+        {/* Form group */}
+        <div className="bg-white/10 backdrop-blur-lg rounded-lg p-3 shadow-2xl border border-white/20">
+          <form onSubmit={handleSubmit} className="flex flex-col gap-2.5">
             {/* GitHub URL */}
             <div>
-              <label htmlFor="githubUrl" className="block text-xs font-semibold text-gray-200 mb-1">
+              <label htmlFor="githubUrl" className="block text-xs font-semibold text-gray-200 mb-0.5">
                 GitHub Repository URL *
               </label>
               <div className="relative">
                 <div className="absolute inset-y-0 left-0 pl-2.5 flex items-center pointer-events-none">
-                  <svg className="h-4 w-4 text-gray-400" fill="currentColor" viewBox="0 0 24 24">
+                  <svg className="h-3.5 w-3.5 text-gray-400" fill="currentColor" viewBox="0 0 24 24">
                     <path fillRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clipRule="evenodd" />
                   </svg>
                 </div>
@@ -117,18 +117,18 @@ const SetupPage = ({ onSetup, onBack }) => {
                 />
               </div>
               {errors.githubUrl && (
-                <p className="mt-1 text-xs text-red-400">{errors.githubUrl}</p>
+                <p className="mt-0.5 text-xs text-red-400">{errors.githubUrl}</p>
               )}
             </div>
 
             {/* Email */}
             <div>
-              <label htmlFor="email" className="block text-xs font-semibold text-gray-200 mb-1">
+              <label htmlFor="email" className="block text-xs font-semibold text-gray-200 mb-0.5">
                 Email Address *
               </label>
               <div className="relative">
                 <div className="absolute inset-y-0 left-0 pl-2.5 flex items-center pointer-events-none">
-                  <svg className="h-4 w-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="h-3.5 w-3.5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207" />
                   </svg>
                 </div>
@@ -143,18 +143,18 @@ const SetupPage = ({ onSetup, onBack }) => {
                 />
               </div>
               {errors.email && (
-                <p className="mt-1 text-xs text-red-400">{errors.email}</p>
+                <p className="mt-0.5 text-xs text-red-400">{errors.email}</p>
               )}
             </div>
 
             {/* Display Name */}
             <div>
-              <label htmlFor="displayName" className="block text-xs font-semibold text-gray-200 mb-1">
+              <label htmlFor="displayName" className="block text-xs font-semibold text-gray-200 mb-0.5">
                 Display Name *
               </label>
               <div className="relative">
                 <div className="absolute inset-y-0 left-0 pl-2.5 flex items-center pointer-events-none">
-                  <svg className="h-4 w-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="h-3.5 w-3.5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                   </svg>
                 </div>
@@ -169,18 +169,14 @@ const SetupPage = ({ onSetup, onBack }) => {
                 />
               </div>
               {errors.displayName && (
-                <p className="mt-1 text-xs text-red-400">{errors.displayName}</p>
+                <p className="mt-0.5 text-xs text-red-400">{errors.displayName}</p>
               )}
             </div>
 
-            {/* Spacer pushes button to bottom of form card */}
-            <div className="flex-1 min-h-[8px]" />
-
-            {/* GitHub Authentication Button */}
             <button
               type="submit"
               disabled={isLoading}
-              className="w-full flex items-center justify-center gap-2 bg-[#24292f] hover:bg-[#1b1f23] text-white font-semibold py-2.5 px-3 rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#24292f] focus:ring-offset-gray-900 disabled:opacity-50 disabled:cursor-not-allowed text-xs shrink-0"
+              className="w-full flex items-center justify-center gap-2 bg-[#24292f] hover:bg-[#1b1f23] text-white font-semibold py-2 px-3 rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#24292f] focus:ring-offset-gray-900 disabled:opacity-50 disabled:cursor-not-allowed text-xs"
             >
               {isLoading ? (
                 <>
@@ -201,7 +197,7 @@ const SetupPage = ({ onSetup, onBack }) => {
             </button>
           </form>
 
-          <div className="text-center mt-2 shrink-0">
+          <div className="text-center mt-2">
             <button
               type="button"
               onClick={onBack}
@@ -212,13 +208,13 @@ const SetupPage = ({ onSetup, onBack }) => {
           </div>
         </div>
 
-        {/* Info box pinned to bottom */}
-        <div className="shrink-0 bg-blue-500/10 border border-blue-500/20 rounded-lg p-2.5">
-          <div className="flex items-start gap-2">
+        {/* Info box */}
+        <div className="bg-blue-500/10 border border-blue-500/20 rounded-lg p-2">
+          <div className="flex items-start gap-1.5">
             <svg className="w-3.5 h-3.5 text-blue-400 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
               <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
             </svg>
-            <div className="text-xs text-gray-300 leading-snug">
+            <div className="text-[11px] text-gray-300 leading-snug">
               <p className="font-semibold text-blue-400 mb-0.5">Why connect GitHub?</p>
               <p>We&apos;ll use your repository to track your DSA solutions and provide insights on your progress.</p>
             </div>
