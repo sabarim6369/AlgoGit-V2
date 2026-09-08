@@ -18,9 +18,9 @@ button {
   font-family: inherit;
 }
 
-/* Smooth scrolling */
+/* Smooth scrolling — disabled in extension popup to avoid layout shifts */
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
 }
 
 /* Focus styles for accessibility */

@@ -43,12 +43,15 @@ function App() {
   }
 
   return (
-    <div className="w-full h-full bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 overflow-hidden">
+    <div className="w-full h-full min-h-0 flex flex-col overflow-hidden bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
       {currentPage === 'welcome' && (
         <WelcomePage onEnter={() => setCurrentPage('setup')} />
       )}
       {currentPage === 'setup' && (
-        <SetupPage onSetup={handleUserSetup} />
+        <SetupPage
+          onSetup={handleUserSetup}
+          onBack={() => setCurrentPage('welcome')}
+        />
       )}
       {currentPage === 'dashboard' && user && (
         <Dashboard 

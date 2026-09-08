@@ -113,8 +113,8 @@ const Dashboard = ({ user, problemStats, streakData, selectedPlatform, onPlatfor
   }
 
   return (
-    <div className="w-full h-full flex flex-col overflow-hidden">
-      <div className={`w-full flex-1 flex flex-col p-4 overflow-y-auto transition-all duration-1000 ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+    <div className="popup-page !py-0 !px-0">
+      <div className={`w-full h-full flex flex-col p-4 overflow-y-auto transition-all duration-1000 ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
         {/* Header */}
         <div className="flex justify-between items-center mb-4 gap-3">
           <div className="flex items-center gap-2">
